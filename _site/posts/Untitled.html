@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Steven Sheets – untitled</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Steven Sheets</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># look at y = 5*x1 + 2.*sin(x2)+1.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.ones(<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.hstack([b,x1,x2])</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([[ 1.        , -1.        , -1.        ],
+       [ 1.        , -0.33333333, -0.33333333],
+       [ 1.        ,  0.33333333,  0.33333333],
+       [ 1.        ,  1.        ,  1.        ]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_Deff(X):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculation of D-efficiency according to SAS JMP</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    XX <span class="op">=</span> np.dot(X.T, X)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    det <span class="op">=</span> np.linalg.det(XX)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> det <span class="op">&gt;</span> <span class="fl">1e-18</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        det <span class="op">=</span> np.power(det, <span class="dv">1</span> <span class="op">/</span> X.shape[<span class="dv">1</span>])</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        det <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">100</span> <span class="op">/</span> X.shape[<span class="dv">0</span>] <span class="op">*</span> det</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_Aeff(X):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculation of A-efficiency according to SAS JMP</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    XX <span class="op">=</span> np.dot(X.T, X)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    trace <span class="op">=</span> np.trace(np.linalg.pinv(XX))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    aeff <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> X.shape[<span class="dv">1</span>] <span class="op">/</span> (X.shape[<span class="dv">0</span>] <span class="op">*</span> trace)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> aeff <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">100</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> aeff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(calc_Deff(X), <span class="st">'  '</span>, calc_Aeff(X))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.0    100</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#x1 = np.linspace(-1, 1, 4).reshape(-1,1)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#x2 = np.linspace(-1,1,4).reshape(-1,1)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.ones(<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.hstack([b,x1,x2])</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>array([[ 1.        ,  0.26047173,  0.50797826],
+       [ 1.        , -0.15878987, -0.26916494],
+       [ 1.        , -0.20248933, -0.06163983],
+       [ 1.        ,  0.60457407, -0.73803911]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.ones(<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.hstack([b,x1,x2])</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>26.964851396793925    17.696087050954535</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>aeff <span class="op">=</span> []</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>deff <span class="op">=</span> []</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> np.ones(<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.hstack([b,x1,x2])</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    deff.append(calc_Deff(X))</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    aeff.append(calc_Aeff(X))</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>aeff<span class="op">=</span>np.array(aeff)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>deff <span class="op">=</span> np.array(deff)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(deff.mean(), <span class="st">' +/-'</span>, deff.std(), <span class="st">'  '</span>, aeff.mean(), <span class="st">' +/- '</span>, aeff.std())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>74.18684763243544  +/- 31.740232370000694    45.82663943032149  +/-  31.311832526812477</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>aeff <span class="op">=</span> []</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>deff <span class="op">=</span> []</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> np.ones(<span class="dv">4</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.hstack([b,x1,x2])</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    deff.append(calc_Deff(X))</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    aeff.append(calc_Aeff(X))</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>aeff<span class="op">=</span>np.array(aeff)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>deff <span class="op">=</span> np.array(deff)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(deff.mean(), <span class="st">' +/-'</span>, deff.std(), <span class="st">'  '</span>, aeff.mean(), <span class="st">' +/- '</span>, aeff.std())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>29.811244278369944  +/- 12.383156704868703    17.202342131977545  +/-  12.635910654309358</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> qmc</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>d_lhc <span class="op">=</span> []</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>a_lhc <span class="op">=</span> []</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    sampler <span class="op">=</span> qmc.LatinHypercube(d<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    sample <span class="op">=</span> sampler.random(n<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    lhc <span class="op">=</span> qmc.scale(sample, [<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>], [<span class="dv">1</span>,<span class="dv">1</span>])</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.hstack([b,lhc])</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    d_lhc.append(calc_Deff(X))</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    a_lhc.append(calc_Aeff(X))</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>d_lhc <span class="op">=</span> np.array(d_lhc)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>a_lhc <span class="op">=</span> np.array(a_lhc)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d_lhc.mean(), <span class="st">' +/-'</span>, d_lhc.std(), <span class="st">'  '</span>, a_lhc.mean(), <span class="st">' +/- '</span>, a_lhc.std())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>39.37701412258452  +/- 10.149662639105163    28.142881839956935  +/-  12.971225536552934</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>array([ 5.92959073, 24.66942695, 38.12384412, 29.1250414 , 13.64365544,
+       45.2973231 , 36.61712915, 31.43765978,  3.81639738, 28.75808667,
+       41.01933326,  8.64931847, 16.59695779, 20.4127189 , 44.11357041,
+       16.5097465 , 41.6555951 , 24.91130895, 30.55058747, 38.98929634,
+       24.03813534, 20.96561261, 20.99340706, 16.08680386, 40.42316362,
+       47.28986561, 18.41903621, 54.90286268, 37.21528248, 24.9077494 ,
+       37.39760126, 13.20320176, 19.42449809, 31.69690646, 21.34835302,
+       27.95966583, 15.46877346, 19.84706712, 29.99697021, 25.00485905,
+       38.76501378, 25.46003084, 24.39260158, 15.75715197, 19.32885647,
+       19.22899443, 50.25649813,  7.03557553, 29.95759062, 15.69756862,
+       17.35268801, 46.59897491, 35.61175185, 29.2843847 , 18.64608881,
+       34.91342942, 10.04079722, 20.96246843, 72.33730351, 13.53492931,
+       24.47314488, 17.42535362, 32.67570787, 63.86741141, 31.79500813,
+        6.00092109, 35.62368985, 32.2628877 , 27.78353713, 40.02293465,
+       29.65557617, 11.18654963, 56.89641615, 32.11293704, 15.90866051,
+       41.6164588 , 15.98315814, 40.18106539, 19.19662664, 16.70041664,
+        4.69437409, 42.89694772, 13.28883281, 37.83691976, 59.7659401 ,
+       39.11674112, 28.94491008, 49.32763448, 37.84860469, 42.18734499,
+       39.77623128, 22.75876805, 18.97659176, 25.09354372, 35.54967392,
+       36.94139071, 35.85952164, 39.97497703, 36.19001378, 28.33734641,
+       26.85382265, 40.5901945 , 11.69160336, 13.33042552, 36.28780914,
+       30.18006634, 35.82549983, 40.64051619, 21.49816228, 20.17711163,
+        9.5383796 , 28.03054142, 40.42461021, 47.86134943, 43.22978048,
+       36.55103557, 16.84968318, 27.12703353, 40.38122437, 20.79360524,
+        7.53998047, 38.242834  , 43.70108487, 38.03510167, 29.4229795 ,
+       10.72376219, 19.11318642, 44.67377737, 44.79545766, 31.75511213,
+       43.22081504, 28.3132589 , 51.36744197,  5.62010518, 39.85150479,
+       35.03782643, 50.87147167, 21.79191827, 40.20395798, 33.88382828,
+       49.84812759, 42.83941314, 38.01628498, 52.85229393, 53.2938344 ,
+       17.02053285, 49.17366959, 17.77009325, 34.01083274, 45.46073079,
+       35.90599986, 37.82984478, 12.99060564, 37.10523451, 20.76942077,
+       22.48650961, 47.09512144, 25.15379821, 40.02637357, 27.47911799,
+       20.44919579, 38.64043712, 16.82198584, 20.4348486 , 38.83244753,
+       23.02502184, 20.97850118, 33.41737424, 41.16195952, 30.95819483,
+       43.90628643, 26.23593889, 46.48734043,  9.37257334, 44.30070453,
+       19.98328786, 21.9252675 , 11.93312013, 38.73446538, 13.3443793 ,
+       27.82444891,  9.14997009, 40.78053596, 31.53606311,  8.76979025,
+       23.91262584,  4.51085023, 48.01115605, 49.22958271, 22.20851289,
+       41.15109568, 14.64608385, 29.1231786 , 26.77524443, 29.97403946,
+       22.85802348, 28.28861251,  9.18961211, 34.05495362, 29.0816203 ,
+       24.22751016, 29.62043198, 11.98119558, 34.33166718, 32.97664648,
+       24.18236777, 24.08250013, 31.77734748, 27.91227393, 24.79462908,
+       37.05197836, 38.35523513, 53.25015084, 39.76619077,  8.93919084,
+       32.18475483, 42.52420473, 45.45899318, 30.51598871, 31.78755662,
+       11.62525265, 30.41243909, 15.47702171, 33.89192614, 29.88433173,
+       42.73942108, 25.79211349, 48.84754726, 47.46702125, 37.53721179,
+       25.22351206, 17.92022558, 42.64894264, 18.08026428, 16.52287406,
+       28.52710872, 16.88946021, 22.5931209 , 10.15771909, 31.54846336,
+       25.68405415,  8.14335877, 36.2114764 , 22.90061985, 20.77526876,
+       15.77184053, 11.45429445, 47.28819073, 49.59683524, 25.76501657,
+       19.24224541, 20.85644392, 29.7584821 , 24.54812325, 22.40543118,
+       29.59625679, 28.50859573, 22.67401632, 34.02443454, 53.7309174 ,
+       35.18308356, 21.25092465, 29.94850933, 51.93091685, 29.4871503 ,
+       36.77739195, 25.46762595, 40.9664986 , 31.88360226, 19.56491541,
+       24.98152165, 25.8629072 , 32.30685495, 27.80271418, 19.92296712,
+       22.75709612, 18.23641487, 46.56865555, 40.56958637, 52.27127352,
+       33.13712195, 10.74126568, 13.51323093, 15.6703858 , 21.42774983,
+       22.21634867, 24.35647145, 31.81857377, 42.43796857,  9.11087095,
+       23.61797916, 32.42922424, 28.78571628, 54.86417702, 51.32972223,
+       20.4719272 , 41.71049493,  7.59237364, 26.77003367, 13.33032692,
+       33.24396144, 30.75279011, 31.92445769, 31.66993109, 33.43481582,
+       39.78915325, 38.84541769, 34.79581631,  9.87924104,  8.97966899,
+       60.00138961, 29.59764615, 13.98652411, 18.6186687 , 47.469193  ,
+       33.63237981, 38.1446326 ,  6.31313137, 41.07364367, 20.91408633,
+       42.37263032, 28.99057077, 35.59813861, 41.5295349 , 40.96970653,
+        6.64333335, 19.51140179, 30.06324363, 28.83020561, 25.83339271,
+       37.73457371, 32.71912911, 16.00836185, 20.52442972, 43.76593345,
+       27.78896044, 32.67293199, 38.80190579, 15.84180682, 31.33515729,
+       20.50212452, 30.72788343, 46.37850822, 13.51251104, 32.11266992,
+       41.62918411, 26.11581571, 38.77068207, 30.64196554, 23.9471064 ,
+       30.87765171, 34.91091231, 39.34759439, 40.94395132, 36.53547155,
+       23.31829081, 46.73367574, 14.38130606, 34.97116667, 47.10516697,
+       34.1327876 , 11.21275062, 34.73068377, 46.3041118 , 53.47811445,
+       25.47740843, 56.86014791, 39.8841573 , 18.04464381, 12.8441861 ,
+       33.05150579, 30.85103559,  4.75445014, 26.43015467, 36.52860388,
+       39.31337952, 20.20225255, 53.7810979 , 40.45961269, 30.05552729,
+       38.23223492, 46.03799775, 50.72012904, 33.34226825, 15.02944935,
+       43.70118305, 45.65495613, 30.79498865, 26.88090612, 21.5420728 ,
+       34.2750798 , 31.25609015, 25.05512201, 22.34918331, 16.51841452,
+       39.65439952,  7.68083288, 22.74752347, 16.57396926, 34.04148678,
+       48.6509469 , 40.19953817, 30.62731412, 32.75130829, 17.03536832,
+       24.68170465, 32.6955217 , 16.85888663, 37.17062688, 33.172828  ,
+       33.07953983, 50.77817145, 37.53653387, 19.8108523 , 28.21885159,
+       23.53632455, 11.17100843, 19.2064724 , 28.99914099, 34.29475717,
+       14.42100562, 28.54899734,  8.77485504, 46.63134437, 17.24148861,
+       10.30036945, 19.70406016, 23.17780117, 17.59499065, 15.22701237,
+       33.93330051, 24.98044988, 29.92263331, 20.45624376, 20.939987  ,
+       35.88562286, 34.60275389, 29.93238831, 35.67186596, 40.32255471,
+       25.00006884, 60.84261373, 28.72018003, 18.02102454, 39.9416804 ,
+       23.35194652, 23.28363162, 40.93692305, 44.32262805,  8.97124689,
+       19.63764905, 57.64060893, 36.69558731, 42.01565346, 59.50574196,
+       18.35416068, 37.19231664, 30.1007559 , 64.34044111, 34.83610581,
+       36.31398743, 49.61780919, 20.61316445, 46.8333054 , 32.69115807,
+       29.75265053, 17.45440563, 49.30492811, 10.36898573, 36.46080202,
+       22.41882485, 15.55992893, 25.21128444, 39.59204345, 32.02357336,
+       40.49275622, 13.44102757, 27.55825098, 33.78804401, 34.27995912,
+       40.42489254, 19.62676722, 10.77503924, 43.63319303, 35.42317742,
+       41.33088101, 36.77350439, 32.33462846, 20.49510647, 59.40976311,
+       36.32120224, 35.34575514, 30.111749  , 23.12409596, 44.37294078,
+        8.80823702, 54.81967062, 28.21324388, 24.1398515 , 30.46451319,
+       18.44549567, 30.08786902, 57.26122601, 33.69507401, 33.47724572,
+       39.31604215,  3.06542564, 30.3800383 , 50.8059926 , 34.41570689,
+       28.00449692, 31.5021752 , 23.38323541, 25.37642282, 24.59708684,
+        5.22437148, 24.47763474, 19.68925507, 28.99285462, 38.50309005,
+       25.1448596 , 21.48832658, 34.52145871,  8.23312688, 14.78631752,
+       14.85379159, 24.19851917, 26.64312246, 41.01406052, 54.06973147,
+       34.89633849, 20.20221549, 36.23650036, 28.81526626, 15.11199125,
+       46.70407055, 12.09224127, 20.40044673, 25.43344545, 26.30602096,
+       29.61434292,  6.5687067 , 31.0291863 , 37.19499429, 24.3338826 ,
+       40.25208523, 25.80146633, 45.37982996, 34.41623299, 33.41454382,
+       24.62867854, 29.35418776, 30.26749858, 30.08724919, 21.66603804,
+       30.6889469 , 27.52878311, 40.97773631, 28.89223159, 26.74653281,
+       32.67271974, 12.95725714, 40.22065038, 32.91644055, 32.3355642 ,
+        3.4524958 , 55.11240048, 27.32663631, 37.6233808 , 32.99306155,
+       35.48941084, 38.74440595, 16.14558783, 25.37619666, 18.91868657,
+       43.18659466, 42.87517296, 19.27674845, 18.9541941 , 30.21145905,
+       45.87640395, 16.27661813, 32.6309937 , 15.31612255, 42.35703476,
+       27.83933603, 15.19495422, 35.71661536, 27.50757095, 16.75620953,
+       24.47784068, 43.33809641, 33.41741767, 33.30744386, 33.84004055,
+       46.12019973, 50.44833368, 26.3352862 , 30.748926  , 38.41374319,
+       30.8334388 , 31.94081303, 36.87530317, 17.18603819, 28.16746762,
+       11.97052206, 12.93959836, 35.27396684,  9.20833479, 17.23168363,
+       41.92101988, 31.09947641, 40.92091885, 34.39270398, 38.53499894,
+       23.88334744,  5.47782624, 47.87588078, 24.10994674, 32.40052761,
+       13.18212961, 13.22081718, 28.9710734 , 17.4299293 ,  8.14209694,
+        5.34055718, 39.61048148, 44.32653772, 38.49152987, 31.71913061,
+       25.32223003, 20.43030422, 38.58895237, 26.34338062, 45.64672898,
+       36.34457575, 44.44687871, 25.45764398,  5.87338047, 23.95246993,
+       39.50845728, 28.29887695, 26.22310495, 21.91477477, 14.94083424,
+       32.57706278, 36.12136471, 25.93059291, 18.28566015, 29.45474017,
+       40.6199008 , 23.77834391, 32.03979306, 37.06695308, 28.44559709,
+       55.82857657, 25.66833058, 10.24890242, 13.32029384, 47.50500738,
+       41.07977655, 25.42463641, 21.83870174, 23.49512712,  7.95324105,
+       25.54563293, 48.15325628, 30.1239386 , 18.74663901, 11.15121741,
+       49.7516194 , 56.76123171, 37.37723721, 30.56963604, 27.75513611,
+       49.97292792, 16.12626594, 40.56077295, 45.78036641, 27.8461259 ,
+       14.0576301 , 11.5735343 , 26.16298166, 28.316792  , 59.90732507,
+       39.87381366, 14.10521361, 17.42239046, 25.11019224, 17.72335307,
+       41.14673942, 31.39046591, 26.25985676, 16.45905458, 40.44661975,
+       33.81283485, 36.10709261, 14.5879298 , 39.18235617, 17.58461537,
+       29.06656648,  5.53663354, 42.8059891 , 12.45082057, 18.09036088,
+       17.88758679, 17.47209085,  7.79017546, 27.29406014, 47.71876843,
+       40.4650658 , 29.39411362, 24.05913009, 31.42126275, 13.43397794,
+       15.89066534, 37.18810086, 27.6659477 ,  5.71283921, 26.69751021,
+       50.07892667, 49.58190946, 30.34448984, 35.52033506, 55.05433721,
+       19.29367351, 31.89171831, 35.98451269, 34.74737018, 31.58268375,
+       17.14158353, 20.39211348, 16.61425521, 46.55069091, 35.50399826,
+       42.07239817, 28.37207061, 33.01637138,  8.10900739, 35.2177835 ,
+       17.39144914, 38.24157629, 32.90004791, 25.92049765, 24.9269457 ,
+       44.05528305, 42.38872653, 33.54324422, 11.51340558, 24.5726675 ,
+       51.48311332, 40.40223727, 28.12876148, 19.68606914, 34.86889738,
+       24.70340774, 15.89528542, 29.82782328, 21.58680455, 50.24050252,
+       11.14462812, 36.23672411, 22.14561761, 39.8996286 , 33.01655893,
+       28.67365071, 40.80014265, 22.69179668, 32.14491116, 18.76786279,
+       17.23964393, 23.95915997, 28.72666215, 49.92868892, 33.66592497,
+       55.63935279, 24.01625337, 16.11110098, 44.99923308, 19.12271463,
+       15.7377028 ,  9.48203415, 42.23584009, 35.16957574, 32.66831527,
+        4.42589344, 33.8895493 , 20.15206288, 35.6586604 , 53.4164781 ,
+       18.33992229, 34.77860202, 36.68241334, 43.67579245, 25.39771846,
+       15.62622124, 20.33171113, 11.84718488, 36.88117618,  6.19016846,
+       29.79036109, 52.15387876, 36.66516589, 34.18970173, 23.94938844,
+       39.93750153, 29.87455464, 28.91669783, 42.34443247, 22.22344106,
+       60.15487699, 51.21270891, 25.48929414, 22.06222701, 46.89483656,
+       17.45554571, 14.16077645, 37.97035516, 30.66388241, 17.76652845,
+       40.50959234, 48.74235386, 29.7891941 , 28.17583748, 23.16232674,
+       28.14561975, 27.49976702, 34.89045493, 46.27644242, 23.61387229,
+       12.18499673, 35.45478547, 25.20044621, 28.43573154, 43.45356479,
+       29.78660167, 42.95466226, 36.56884644, 28.95615642, 31.22252755,
+       29.27818282, 31.30878101, 16.7412775 , 62.6684561 ,  4.86482949,
+       26.84501281, 36.39200169, 23.38821157, 31.72146529, 40.42101507,
+       13.17682544, 34.94291065, 31.39381179, 35.2394517 , 38.23268868,
+       37.73699816,  5.99052179,  5.44347714, 37.86374733, 48.43592671,
+       22.61379773, 27.37317316, 38.82057614, 40.16288383, 36.74740995,
+       16.69089906, 42.38746781,  8.20710517, 11.66332975, 31.20957881,
+       25.63042321, 16.81290798, 29.39775214, 27.4559992 , 29.24512918,
+       51.47013638, 23.10174   , 32.92008511, 36.60687737, 43.91903551,
+       34.19634405, 39.12347785, 19.30089392, 13.95779624, 31.08173212,
+       36.30888438, 51.45467955,  9.00099385, 32.18577424, 47.92776577,
+       15.06197151, 29.82320714, 22.87208807,  8.65127497, 60.28754897,
+       29.58888873, 34.51797823, 19.24891987, 28.91436998, 40.86826513,
+       35.42936474, 19.59471641, 32.84160008, 21.4817535 , 45.85902447,
+       26.7842713 , 56.66801192, 38.73348048, 52.98149493, 45.26171053,
+       22.12373397, 24.24293061, 20.57987121, 22.64346153, 33.7742188 ,
+       55.49563381, 19.81658223, 48.90618433, 41.29223813, 22.88112047,
+        8.12741211, 13.06009248, 35.65671708, 11.91357559, 11.80324164,
+       34.85196084, 41.09216526, 31.07953689, 20.63318834, 40.93630509,
+       51.01808534, 46.27202466, 13.02196997, 47.96219828, 13.74741883,
+       45.18410302, 27.08856625, 43.70316492, 43.85467267, 42.29064772,
+       30.7537678 , 36.37289454, 13.96954552, 25.10900493, 32.4491944 ,
+       29.26317377, 27.16511904, 68.48561184, 52.92153721, 30.19503144,
+       20.84244353, 26.86821585, 30.40853623, 30.74844773, 10.56976942,
+       28.22682573, 34.26403478, 27.49401765, 30.42312851, 10.12116469,
+       38.12704366, 46.82726123, 33.1605514 , 38.1072564 , 27.96777841,
+       22.53279477, 33.73841438, 17.32553642, 35.27631919, 17.9586258 ,
+       11.90425641, 14.49869455, 30.16777887, 10.85343218, 17.05727305,
+       28.29511215,  5.56890258, 33.76142082, 26.53157918,  7.46098542,
+       27.08783397, 28.47681361, 14.23776927, 20.47645409, 56.03076627,
+       30.65112977, 36.71967052, 15.99978468, 39.06606402, 46.09518216,
+       25.55475543,  9.50126302, 40.01700075, 12.2626977 , 53.38446321,
+       24.01286186, 34.87014075, 20.85574632, 31.95247891, 30.58368878])</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

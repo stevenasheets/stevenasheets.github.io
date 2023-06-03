@@ -1,0 +1,20 @@
+{
+  "about.qmd": {
+    "about.html": "490191d4"
+  },
+  "posts/post-with-code/index.qmd": {
+    "index.html": "3d215824"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "39952e59"
+  },
+  "index.qmd": {
+    "index.html": "2f79b112"
+  },
+  "posts/Untitled.ipynb": {
+    "Untitled.html": "284ad1f0"
+  },
+  "posts/FutureIsDegrowth.ipynb": {
+    "FutureIsDegrowth.html": "91739a39"
+  }
+}
