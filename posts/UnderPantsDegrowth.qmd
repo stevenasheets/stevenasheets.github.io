@@ -1,0 +1,39 @@
+---
+title: "Degrowth: the Underpants Gnome theory of Climate Mitigation "
+format: html
+author: "Steven"
+date: "2023-11-10"
+categories: [climate change, economics, degrowth]
+---
+
+Jason Hickel has a [recent paper](https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(23)00174-2/fulltext) with co-author Jefim Vogel. The thrust of the paper is that an absolute decoupling of emissions from GDP growth is too slow to meet the Paris Agreement goals:
+
+ > It is not enough to just reduce emissions by any amount; countries need to reduce their emissions to net zero, and fast enough to limit global warming to 1·5°C or at least well below 2°C in an equitable manner, as per the requirements of the Paris Agreement. Insufficient emission reductions will result in dangerous and possibly catastrophic global warming and exacerbate climate injustice. Such a scenario cannot be considered green. Several studies have established that the benchmark for green growth should therefore not just be about whether countries achieve absolute decoupling, but whether they achieve sufficiently rapid absolute decoupling to meet Paris climate and equity commitments.5,  7,  15 **It is ultimately a question of speed**.
+
+ The paper then argues for post-growth policies in light of the failure of green growth.
+
+Having argued that the speed of emissions reductions is important--and finding green growth policies deficient--Hickel and Vogel do not apply the same standard to their preferred degrowth policies. For if you hold degrowth as a solution to environmental problems (in their case, meeting the Paris Agreement goals) then it is insufficient to just criticize green growth, you have to actually show degrowth policies will be implemented in a time-frame commensurate with limiting warming to 1·5°C. Because if you have a policy that no one wants--and have identified Green Growth as unworkable, then we now have two policies that will not acheive the stated goal. 
+
+Degrowth is a great example of the Underpants Gnome [theory of political economy](https://www.forbes.com/sites/artcarden/2011/07/14/underpants-gnomes-political-economy/?sh=3d0782234e2e). The degrowth version goes like this:
+
+1. Critique capitalism, colonialism, eco-modernism, and all the other bad -isms.
+2. ????
+3. Radical social transformation to full blown luxury eco-socialism. 
+
+It seems like if you're selling Phase 3 as a solution to environmental problems Phase 2 should probably be fleshed out a bit. But when I read popular books and academic papers about degrowth the "how" of this radical social transformation is the most vaguely described. Faced with the problem of moving people towards a radical social transition degrowthers fall into abstract discussions with papers full of words such as "reimagining" or "reconceptualize" but giving little reason why anyone would want to go along with their vision.
+
+This can be seen by looking at concrete policy proposals of Hickel and Vogel: 
+
+> Policy makers can take several steps toward this end: shifting away from economic growth as a core objective, and instead prioritising equity, human wellbeing, and ecological sustainability;40,  41,  57,  58,  59 scaling down energy-intensive or carbon-intensive and less-necessary forms of production and consumption (eg, sports utility vehicles, air travel, industrial meat and dairy, fast fashion, weapons, cruises, mansions, and private jets);43,  44,  45,  51 reducing income and wealth inequality, and curtailing the purchasing power and consumption of wealthy classes (eg, via wealth taxes and maximum income thresholds);54,  60,  61,  62 insulating buildings and repurposing buildings to minimise new builds;42,  51,  52,  63 reducing food waste, and shifting to agroecological farming techniques and predominantly plant-based diets;51,  64,  65,  66 introducing laws to end planned obsolescence, lengthen product lifespans, and guarantee rights to repair;42,  51,  67 shifting away from private cars while also improving public transit, bike systems, and walkability;42,  51,  68 and shifting from commodified for-profit provisioning to decommodified, socially and ecologically beneficial not-for-profit provisioning.69,  70
+
+Things like air travel, meat & dairy, private car ownership, SUVs and large houses are quite popular across political parties. I imagine anyone who campaigns on the proposal of making everyone vegetarian is simply going to mocked into electoral irrelevance. But it's worse than that, [this paper](https://www.sciencedirect.com/science/article/pii/S0921800923002008) argues that under degrowth the average American's income would look far more like the average Nigerian's: 
+
+> According to the 1.5 °C scenario, all industrialized countries will have their GDP per capita reduced with over 90%. Semi-developed countries such as Argentina, Russia or China will also have their mean incomes severely reduced, with close to 90%. Even developing countries such as India and Kenya will have their GDP reduced with 30 to 4%, while only the group of least developed countries would be allowed a small economic growth – much smaller than their current growth rates, however.
+
+In my opinion, keeping warming to 1.5 °C just seems completely aspirational rather than realistic. The plot below gives the needed emissions reductions to keep us at 1.5 °C (from [UN Climate Change](https://unfccc.int/documents/631600)). Outside of an alternative theory of degrowth--like nuclear war or a super-virus--I don't expect us to meet the 1.5 °C target.
+
+<figure>
+    <img src="emissions_plot.jpeg"
+         alt="Future Emissions Projections" width="400" class="center">
+    <figcaption>Future emissions projections.</figcaption>
+</figure>

@@ -1,0 +1,40 @@
+
+---
+title: "Review of *More Than Curious* by W. H. Press"
+format: html
+author: "Steven"
+date: "2023-11-11"
+categories: [Physics, Science]
+---
+
+If you're in the sciences and have done any computational work in the last 30 or so years you've likely used (and perhaps blantantly copied material from) William H. Press' book [*Numerical Recipes in Scientific Computing*](https://numerical.recipes/book.html). Besides helping countless scientists numerically solve differential equations the main author Press, a theoretical astrophysicist by training, has had an interesting career with interactions with many big names in physics, the defense industry, and government. *More Than Curious* is Press' autobiography detailing his successful ascent in academic (astro)physics, becoming a defense consultant, a National Labs administrator, and his final return to academia. 
+
+For me *More Than Curious* is an entertaining read not only because of the professional overlap Press & I had through the national labs but also his frank assessments of many big name scientists of the late 20th century. Press did his PhD at Caltech under Nobel Prize winner [Kip Thorne](https://en.wikipedia.org/wiki/Kip_Thorne) working in numerical relativity. The numerical bits of his work he picked up from stinces at Lawrence Livermore National Lab from the likes of [Jim Wilson](https://en.wikipedia.org/wiki/James_Ricker_Wilson) and other LLNL scientists working on weapon design codes. Press raised quickly in the academic ranks becoming--at the time--one of the youngest tenured professors at Harvard. His student [Adam Riess](https://en.wikipedia.org/wiki/Adam_Riess) would win the Nobel Prize for providing evidence for expansion of the universe.
+
+As Press hit mid-career he became increasingly involved in various consultancy roles, most notably the [JASONs](https://en.wikipedia.org/wiki/JASON_(advisory_group)). The slowest part of his book was his description of the academic politics he experienced as a Harvard professor. I've always thought academic politics seemed tedious so I guess that is an upside to never being at the level to be considered for an academic appointment. Press eventally tired of the academic game as well and in the late 1990s accepted a Deputy Director position at Los Alamos National Lab. Press' half a decade at LANL coincided with a series of interesting events including the [Wen Ho Lee](https://en.wikipedia.org/wiki/Wen_Ho_Lee) scandal, the Cerro Grande fire, and the ousting of the well-liked LANL director [John Browne](https://en.wikipedia.org/wiki/John_C._Browne) (one of my academic brothers) to be replaced by universally hated [Pete Nanos](https://en.wikipedia.org/wiki/Pete_Nanos). Press eventually left LANL for a professorship at UT-Austin.
+
+The best parts of the book are his anecdotes and assessments of other people. 
+
+Having spent years at LLNL this bit about how need-to-know worked in practice amused me (this would get you in trouble today!):
+
+> Coincidentally, I knew a lot about the neutron bomb. I had visited Livermore Lab two weeks before the Post article came out. Larry Smarr was there consulting with the Jims, Wilson and LeBlanc, on his general relativity computer program. Larry avoided all classified work, but he held a security clearance, because you couldn’t use the Livermore computers otherwise. The two of us were in LeBlanc’s office. “Well, what weapons are you working on?” I asked LeBlanc. Larry cringed. He hadn’t learned that Livermore people loved to talk about their work and ignored need-to-know rules if you expressed the slightest interest. Soon, LeBlanc was drawing diagrams on the board and explaining all manner of clever weapons designs, including, as it happened, the neutron bomb.
+
+[Yakov Zel'dovich](https://en.wikipedia.org/wiki/Yakov_Zeldovich) has always fascinated me for the wide breadth of physics he contribued to. Here Press relates a meeting between one my former collaborators, George Chapline, and Zel'dovich:
+
+> Chapline, still at Livermore, was by then working mostly on astrophysics, and he was in Moscow for an international conference. Zel’dovich caused an inter- mediary to make contact with George and make arrangements for the two of them to meet privately. In the U.S.S.R., this usually meant outdoors and in motion. “Walks in the woods,” were not just metaphorical. It was clear that each knew a lot about the other’s weapons work via classified intelligence sources on their respective sides. Chapline returned from Moscow full of scientific and anecdotal information about the development of Soviet nuclear weapons. It was old, historical stuff—nothing that would then be useful to the United States in any competitive way—but it was surely still technically classified, both in the U.S. and certainly the U.S.S.R. Chapline was willing to talk about the scientific particulars only behind the fence at Livermore. The most likely interpretation was that Zel’dovich wanted intellectual credit—including in the West, including behind our fences— for his nuclear weapons discoveries. He was a loyal Soviet, a hero. But apparently he trusted Chapline to share his information only with members of this one peculiar world brotherhood—nuclear weapons designers on the two sides of the Iron Curtain.
+
+> Zel’dovich may also have wanted to take Sakharov’s reputation down a notch. The latter had by then been awarded the Nobel Peace Prize and was a hero in the West. Zel’dovich told Chapline that he, Zel’dovich, ran the whole hydrogen bomb effort, a reality not appreci- ated in the West. Sakharov, a young student, played a very limited role, he said. Zel’dovich did credit him with suggesting what in the West was referred to as “the Teller-Ulam trick”. Lev Landau’s role, in charge of the computational effort, was, Zel’dovich said, much more significant. 
+
+I was taught astrophysics by a professor who briefly worked with Zel'dovich. My professor described Zel'Dovich as someone who would take credit for a discovery no matter how vague & hand-wavy Zel'dovich's initial argument was. 
+
+Press was a fan of Feynman and had some good interactions with him:
+
+> Feynman had announced in class that he was going to give individual oral final exams to every student—ten minutes each. What kind of exam could take just ten minutes? “Mr. Press?” he said leaning out of his office when I arrived at four on the dot. I went in. He shut the door. “Now the spider has caught the fly,” his amusement at this joke undiminished on its fourteenth repetition. I stood at the blackboard, and he asked the first question. When I got five words (and one or two chalk symbols) into my answer, he interrupted with the next question. Then similarly for the third. I complained that he was not letting me actually answer the questions. “Oh, you think I don’t know exactly what you were going to say?” He got up from his chair with a sarcastic show of effort and went to the blackboard. “You were going to say this...and then this...and then this.” He was exactly right. After that, I decided to relax and just enjoy not answering the questions. At the end, he said, offhandedly, “You get a B.” He must have seen my disappointment, because he added. “It’s not an ordinary B. It’s a Dick Feynman B. You go out there and be proud of it.”
+
+
+Kip Thorne admonishing Press for having too many non-science interests amused me too:
+
+> Kip estimated that I worked—actually worked on my research— about three hours a day. I objected: I thought it was three hours a day for nine months of the year, but 16 hours a day for the three months in total that I might have my teeth sunk into a good problem. That’s just it, he said in frustration: The proportions ought to be the reverse. A good scientist could have at most one outside interest. His was sex, he said with a completely straight face. If mine was TV, he could accept that. But no, TV was just one of many other competing interests for me.
+
+There's too much quotable material in the book but a [free copy](http://morethancurious.com) of the book is available on Press' website.
+
