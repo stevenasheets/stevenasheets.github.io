@@ -1,0 +1,43 @@
+---
+title: "Notes on Bayesian Optimization"
+format: html
+author: "Steven"
+date: "2026-5-31"
+categories: [Statistics, Science, Machine Learning]
+---
+
+This page serves as a notebook for the topic of Bayesian optimization.
+
+#### Basic idea
+
+You have a function $f(x)$ that you want to maximize and do so in an efficient manner. However, the function $f(x)$ is a black- or grey-box so you don't have access to the parametric form of it. But you have a collection of queries of $f(x)$. 
+
+The basic idea of Bayesian optimization (BO or BayesOpt) is to fit a surrogate model to the data and then use it for sequential design. The standard statistical model used is often the Gaussian Process but other Bayesian models could work. Then the question of what data to collect next is made via a utility function usually called the acquisition function $\alpha(x)$. Bayesian optimization is then a sequential design process where we fit a surrogate to the dataset, find the next design point by maximizing the acquisition function, perform the experiment, concatenate the dataset, and then repeat the process until you find the maximum of $f(x)$ (or blow through your budget).
+
+###### General References
+
+[Bayesian Optimization](https://bayesoptbook.com), Romain Garnett. Probably most complete book on BO and a nice read.   
+[Surrogates](https://bookdown.org/rbg/surrogates/), Robert Gramarcy. A statistician's take on optimization and design. Covers active learning techniques aside from BO and also some response surface methodology. The last couple chapters were less useful for me. Code in R.  
+[Algorithms for Optimization](https://algorithmsbook.com/optimization/), Mydel Kochenderfer & Tim Wheeler. This book is more on general mathemetical optimization but includes a chapter on surrogate based optimization. I quite like it. Code in Julia.   
+[Botorch](https://botorch.org) Best API for BayesOpt IMO. Developed by Meta's active learning group.
+
+###### High dimensionalal Bayesian Optimization
+
+[Vanilla BO Performs Great in High Dim](https://arxiv.org/abs/2402.02229), Hvarfner *et al*., nice paper that demonstrates a dimension dependent lognormal prior on the lengthscale really helps BO at higher dimensions.  
+[Penalized Complexity Priors](https://dansblog.netlify.app/posts/2022-09-07-priors5/priors5) Nice blogpost describing an alternative way to apply dimensional dependent priors on the GP.  
+[We Still Don't understand High-Dimensional BO](https://arxiv.org/abs/2512.00170), Doumant *et al*. Fun paper that finds BO with a spherically projected linear kernel works suprisingly well in high dimension.  
+[Understanding High-D BayesOpt](https://arxiv.org/abs/2502.09198), Papenmeier *et al*.  
+
+###### Physics informed BO 
+
+[Physics makes the difference: Bayesian optimization and active learning via augmented Gaussian process](https://arxiv.org/abs/2108.10280), Ziatdinov *et al*. Notes using a physics-inspired mean function encourages faster BO. Not suprising as the GP will both interpolate and extrapolate better with a meaningful prior on the mean function.  
+
+###### Acquisition functions
+
+target vector. 
+
+
+###### Other
+
+[Scalable Bayesian Optimization Using Deep Neural Networks](https://arxiv.org/abs/1502.05700) Snoek *et al*. Applies a linear neural model to the BO. Kind of a simpler deep learning model compared to going full BNN.  
+[Generalizing Transfer Bayesian Optimization to Source-Target Heterogeneity](https://ieeexplore.ieee.org/document/9180071), Wei Min *et al*. A colleage and I implemented something like this paper and it completely fails. On reflection I don't see why it would work in principle. Using a decoder to reduce the dimensionality of the source to the target dataset has no garantee to preserve the covariance of the former dataset so it isn't clear how information would be correctly transfered. On the other hand the method of [B. Cao](https://ojs.aaai.org/index.php/AAAI/article/view/7682) that inspired this paper works quite well on homogenous transfer tasks.  
