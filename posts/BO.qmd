@@ -36,7 +36,7 @@ The basic idea of Bayesian optimization (BO or BayesOpt) is to fit a surrogate m
 ###### Acquisition functions
 
 [Efficient Bayesian Optimization for Target Vector Estimation](https://proceedings.mlr.press/v89/uhrenholt19a.html). LCB and EI acquisition functions under an L2 norm.  
-[Bayesian Active Learning for Structured Output Design](https://arxiv.org/abs/1911.03671), Matsui *et al$. Similar to the preceeding paper but considers correlated outputs and only considers PI and EI. It would be nice to compare this to the previous paper.  
+[Bayesian Active Learning for Structured Output Design](https://arxiv.org/abs/1911.03671), Matsui *et al*. Similar to the preceeding paper but considers correlated outputs and only considers PI and EI. It would be nice to compare this to the previous paper.  
 
 ###### Interpretability
 
