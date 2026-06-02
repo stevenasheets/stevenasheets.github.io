@@ -193,12 +193,12 @@ window.Quarto = {
 <section id="basic-idea" class="level4">
 <h4 class="anchored" data-anchor-id="basic-idea">Basic idea</h4>
 <p>You have a function <span class="math inline">\(f(x)\)</span> that you want to maximize and do so in an efficient manner. However, the function <span class="math inline">\(f(x)\)</span> is a black- or grey-box so you don’t have access to the parametric form of it. But you have a collection of queries of <span class="math inline">\(f(x)\)</span>.</p>
-<p>The basic idea of Bayesian optimization (BO) is to fit a surrogate model to the data and then use it for sequential design. The standard statistical model used is often the Gaussian Process but any Bayesian model could work. Then the question of what data to collect next is made via a utility function usually called the acquisition function <span class="math inline">\(\alpha(x)\)</span>. Bayesian optimization is then a sequential design process where we fit a surrogate to the dataset, find the next design point by maximizing the acquisition function, perform the experiment, concatenate the dataset, and then repeat the process until you find the maximum of <span class="math inline">\(f(x)\)</span> (or blow through your budget).</p>
+<p>The basic idea of Bayesian optimization (BO or BayesOpt) is to fit a surrogate model to the data and then use it for sequential design. The standard statistical model used is often the Gaussian Process but other Bayesian models could work. Then the question of what data to collect next is made via a utility function usually called the acquisition function <span class="math inline">\(\alpha(x)\)</span>. Bayesian optimization is then a sequential design process where we fit a surrogate to the dataset, find the next design point by maximizing the acquisition function, perform the experiment, concatenate the dataset, and then repeat the process until you find the maximum of <span class="math inline">\(f(x)\)</span> (or blow through your budget).</p>
 <section id="general-references" class="level6">
 <h6 class="anchored" data-anchor-id="general-references">General References</h6>
 <p><a href="https://bayesoptbook.com">Bayesian Optimization</a>, Romain Garnett. Probably most complete book on BO and a nice read.<br>
 <a href="https://bookdown.org/rbg/surrogates/">Surrogates</a>, Robert Gramarcy. A statistician’s take on optimization and design. Covers active learning techniques aside from BO and also some response surface methodology. The last couple chapters were less useful for me. Code in R.<br>
-<a href="https://algorithmsbook.com/optimization/">Algorithms for Optimization</a>, Mydel Kochenderfer &amp; Tim Wheeler. This book is more on general mathemetical optimization but includes a chapter on surrogate based optimization. I like this book a lot. Code in Julia.<br>
+<a href="https://algorithmsbook.com/optimization/">Algorithms for Optimization</a>, Mydel Kochenderfer &amp; Tim Wheeler. This book is more on general mathemetical optimization but includes a chapter on surrogate based optimization. I quite like it. Code in Julia.<br>
 <a href="https://botorch.org">Botorch</a> Best API for BayesOpt IMO. Developed by Meta’s active learning group.</p>
 </section>
 <section id="high-dimensionalal-bayesian-optimization" class="level6">
@@ -211,6 +211,10 @@ window.Quarto = {
 <section id="physics-informed-bo" class="level6">
 <h6 class="anchored" data-anchor-id="physics-informed-bo">Physics informed BO</h6>
 <p><a href="https://arxiv.org/abs/2108.10280">Physics makes the difference: Bayesian optimization and active learning via augmented Gaussian process</a>, Ziatdinov <em>et al</em>. Notes using a physics-inspired mean function encourages faster BO. Not suprising as the GP will both interpolate and extrapolate better with a meaningful prior on the mean function.</p>
+</section>
+<section id="acquisition-functions" class="level6">
+<h6 class="anchored" data-anchor-id="acquisition-functions">Acquisition functions</h6>
+<p>target vector.</p>
 </section>
 <section id="other" class="level6">
 <h6 class="anchored" data-anchor-id="other">Other</h6>
