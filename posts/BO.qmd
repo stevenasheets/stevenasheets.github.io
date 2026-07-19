@@ -25,8 +25,9 @@ The basic idea of Bayesian optimization (BO or BayesOpt) is to fit a surrogate m
 
 [Vanilla BO Performs Great in High Dim](https://arxiv.org/abs/2402.02229), Hvarfner *et al*., nice paper that demonstrates a dimension dependent lognormal prior on the lengthscale really helps BO at higher dimensions. Default prior now in Botorch.    
 [Penalized Complexity Priors](https://dansblog.netlify.app/posts/2022-09-07-priors5/priors5) Nice blogpost describing an alternative way to apply dimensional dependent priors on the GP.  
-[We Still Don't understand High-Dimensional BO](https://arxiv.org/abs/2512.00170), Doumant *et al*. Fun paper that finds BO with a spherically projected linear kernel works suprisingly well in high dimension. [Linear Regression Meme](https://www.reddit.com/r/economicsmemes/comments/s3ni9v/how_true_is_this_do_economists_only_use_linear/).
+[We Still Don't understand High-Dimensional BO](https://arxiv.org/abs/2512.00170), Doumant *et al*. Fun paper that finds BO with a spherically projected linear kernel works suprisingly well in high dimension. [Linear Regression Meme](https://www.reddit.com/r/economicsmemes/comments/s3ni9v/how_true_is_this_do_economists_only_use_linear/).  
 [Understanding High-D BayesOpt](https://arxiv.org/abs/2502.09198), Papenmeier *et al*.  
+[Learning in High Dimension Always Amounts to Extrapolation](https://arxiv.org/abs/2110.09485), Papenmeier *et al*. In high dimensions you're mostly just extrapolating. Therefore, setting letting the GP mean be a constant is likely not the best choice.
 
 ###### Physics informed BO 
 

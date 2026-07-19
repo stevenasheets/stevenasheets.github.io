@@ -205,7 +205,9 @@ window.Quarto = {
 <h6 class="anchored" data-anchor-id="high-dimensionalal-bayesian-optimization">High dimensionalal Bayesian Optimization</h6>
 <p><a href="https://arxiv.org/abs/2402.02229">Vanilla BO Performs Great in High Dim</a>, Hvarfner <em>et al</em>., nice paper that demonstrates a dimension dependent lognormal prior on the lengthscale really helps BO at higher dimensions. Default prior now in Botorch.<br>
 <a href="https://dansblog.netlify.app/posts/2022-09-07-priors5/priors5">Penalized Complexity Priors</a> Nice blogpost describing an alternative way to apply dimensional dependent priors on the GP.<br>
-<a href="https://arxiv.org/abs/2512.00170">We Still Don’t understand High-Dimensional BO</a>, Doumant <em>et al</em>. Fun paper that finds BO with a spherically projected linear kernel works suprisingly well in high dimension. <a href="https://www.reddit.com/r/economicsmemes/comments/s3ni9v/how_true_is_this_do_economists_only_use_linear/">Linear Regression Meme</a>. <a href="https://arxiv.org/abs/2502.09198">Understanding High-D BayesOpt</a>, Papenmeier <em>et al</em>.</p>
+<a href="https://arxiv.org/abs/2512.00170">We Still Don’t understand High-Dimensional BO</a>, Doumant <em>et al</em>. Fun paper that finds BO with a spherically projected linear kernel works suprisingly well in high dimension. <a href="https://www.reddit.com/r/economicsmemes/comments/s3ni9v/how_true_is_this_do_economists_only_use_linear/">Linear Regression Meme</a>.<br>
+<a href="https://arxiv.org/abs/2502.09198">Understanding High-D BayesOpt</a>, Papenmeier <em>et al</em>.<br>
+<a href="https://arxiv.org/abs/2110.09485">Learning in High Dimension Always Amounts to Extrapolation</a>, Papenmeier <em>et al</em>. In high dimensions you’re mostly just extrapolating. Therefore, setting letting the GP mean be a constant is likely not the best choice.</p>
 </section>
 <section id="physics-informed-bo" class="level6">
 <h6 class="anchored" data-anchor-id="physics-informed-bo">Physics informed BO</h6>
