@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Steven">
+<meta name="dcterms.date" content="2026-07-19">
 
-<title>Steven Sheets</title>
+<title>Notes on State Space Models – Steven Sheets</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,25 +28,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,77 +72,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Steven Sheets</span>
     </a>
   </div>
@@ -153,7 +95,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,225 +116,69 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Notes on State Space Models</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Statistics</div>
+                <div class="quarto-category">Science</div>
+                <div class="quarto-category">Machine Learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Steven </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 19, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Ym9vayUyMHJldmlldw==">book review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2xpbWF0ZSUyMGNoYW5nZQ==">climate change <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGVncm93dGg=">degrowth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWFjaGluZSUyMExlYXJuaW5n">Machine Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGh5c2ljcw==">Physics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2NpZW5jZQ==">Science <span class="quarto-category-count">(3)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>This page serves as a notebook for the topic of State Space Models.</p>
+<section id="basic-idea" class="level4">
+<h4 class="anchored" data-anchor-id="basic-idea">Basic idea</h4>
+<p>A state space model is a used to describe the behavior of a system over time. It consists of two main components: the state equation, which describes how the internal state of the system evolves over time, and the observation equation, which relates the observed data to the underlying state.</p>
+<section id="general-references" class="level6">
+<h6 class="anchored" data-anchor-id="general-references">General References</h6>
+<p><a href="https://academic.oup.com/book/16563">State Space Models</a>, Durbin &amp; Koopman.<br>
+<a href="https://users.aalto.fi/~ssarkka/#books">Bayesian Filtering and Smoothing</a>, Simo Särkkä. A book that focuses on Bayesian methods for state space models, recommended.</p>
+</section>
+<section id="other-topics" class="level6">
+<h6 class="anchored" data-anchor-id="other-topics">Other Topics</h6>
+<p><a href="https://proceedings.neurips.cc/paper_files/paper/2014/file/875b60cf697a9e09e12c0f07b982e431-Paper.pdf">Variational Gaussian Process State Space Models</a>, R. Frigola, Y. Chen, C. E. Rasmussen. Using a GP for non-linear SSMs.<br>
+<a href="https://proceedings.mlr.press/v180/lindinger22a.html">Laplace approximated Gaussian process state-space models</a>, Lindinger <em>et al</em>. Using a GP for non-linear SSMs but inference is done via Laplace approximation.</p>
 
 
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U3RhdGlzdGljcyUyQ1NjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmc=" data-listing-date-sort="1784444400000" data-listing-file-modified-sort="1784474477727" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="137">
-<div class="thumbnail"><a href="./posts/SSM.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/SSM.html" class="no-external">Notes on State Space Models</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2NpZW5jZQ=='); return false;">Science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/SSM.html" class="no-external">
-This page serves as a notebook for the topic of State Space Models.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/SSM.html" class="no-external">
-<div class="listing-date">
-Jul 19, 2026
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="U3RhdGlzdGljcyUyQ1NjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmc=" data-listing-date-sort="1780210800000" data-listing-file-modified-sort="1784473578474" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="677">
-<div class="thumbnail"><a href="./posts/BO.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/BO.html" class="no-external">Notes on Bayesian Optimization</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2NpZW5jZQ=='); return false;">Science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/BO.html" class="no-external">
-This page serves as a notebook for the topic of Bayesian optimization.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/BO.html" class="no-external">
-<div class="listing-date">
-May 31, 2026
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UGh5c2ljcyUyQ1NjaWVuY2U=" data-listing-date-sort="1699689600000" data-listing-file-modified-sort="1780243806636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1237">
-<div class="thumbnail"><a href="./posts/MoreThanCurious.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/MoreThanCurious.html" class="no-external">Review of <em>More Than Curious</em> by W. H. Press</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UGh5c2ljcw=='); return false;">Physics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2NpZW5jZQ=='); return false;">Science</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/MoreThanCurious.html" class="no-external">
-If you’re in the sciences and have done any computational work in the last 30 or so years you’ve likely used (and perhaps blantantly copied material from) William H. Press’…<em></em><em></em>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/MoreThanCurious.html" class="no-external">
-<div class="listing-date">
-Nov 11, 2023
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Y2xpbWF0ZSUyMGNoYW5nZSUyQ2Vjb25vbWljcyUyQ2RlZ3Jvd3Ro" data-listing-date-sort="1699603200000" data-listing-file-modified-sort="1780243806636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="815">
-<div class="thumbnail"><a href="./posts/UnderPantsDegrowth.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/emissions_plot.jpeg" alt="Future Emissions Projections"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/UnderPantsDegrowth.html" class="no-external">Degrowth: the Underpants Gnome theory of Climate Mitigation</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2xpbWF0ZSUyMGNoYW5nZQ=='); return false;">climate change</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGVncm93dGg='); return false;">degrowth</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/UnderPantsDegrowth.html" class="no-external">
-Jason Hickel has a recent paper with co-author Jefim Vogel. The thrust of the paper is that an absolute decoupling of emissions from GDP growth is too slow to meet the Paris…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/UnderPantsDegrowth.html" class="no-external">
-<div class="listing-date">
-Nov 10, 2023
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Ym9vayUyMHJldmlldyUyQ2NsaW1hdGUlMjBjaGFuZ2UlMkNlY29ub21pY3M=" data-listing-date-sort="1685689200000" data-listing-file-modified-sort="1780243806636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1354">
-<div class="thumbnail"><a href="./posts/FutureIsDegrowth.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/FutureIsDegrowth.html" class="no-external">Notes on The Future is Degrowth</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ym9vayUyMHJldmlldw=='); return false;">book review</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2xpbWF0ZSUyMGNoYW5nZQ=='); return false;">climate change</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/FutureIsDegrowth.html" class="no-external">
-Some notes I’ve compiled while reading The Future is Degrowth.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/FutureIsDegrowth.html" class="no-external">
-<div class="listing-date">
-Jun 2, 2023
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bmV3cw==" data-listing-date-sort="1685602800000" data-listing-file-modified-sort="1780372817543" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-First post, let’s see how this goes.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Jun 1, 2023
-</div>
-<div class="listing-author">
-Steven
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

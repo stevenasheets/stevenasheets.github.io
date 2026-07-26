@@ -53,6 +53,13 @@
     "href": "index.html",
     "title": "Steven Sheets",
     "section": "",
-    "text": "Notes on Bayesian Optimization\n\n\n\nStatistics\n\nScience\n\nMachine Learning\n\n\n\n\n\n\n\n\n\nMay 31, 2026\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nReview of More Than Curious by W. H. Press\n\n\n\nPhysics\n\nScience\n\n\n\n\n\n\n\n\n\nNov 11, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nDegrowth: the Underpants Gnome theory of Climate Mitigation\n\n\n\nclimate change\n\neconomics\n\ndegrowth\n\n\n\n\n\n\n\n\n\nNov 10, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nNotes on The Future is Degrowth\n\n\n\nbook review\n\nclimate change\n\neconomics\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nSteven\n\n\n\n\n\nNo matching items"
+    "text": "Notes on State Space Models\n\n\n\nStatistics\n\nScience\n\nMachine Learning\n\n\n\n\n\n\n\n\n\nJul 19, 2026\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nNotes on Bayesian Optimization\n\n\n\nStatistics\n\nScience\n\nMachine Learning\n\n\n\n\n\n\n\n\n\nMay 31, 2026\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nReview of More Than Curious by W. H. Press\n\n\n\nPhysics\n\nScience\n\n\n\n\n\n\n\n\n\nNov 11, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nDegrowth: the Underpants Gnome theory of Climate Mitigation\n\n\n\nclimate change\n\neconomics\n\ndegrowth\n\n\n\n\n\n\n\n\n\nNov 10, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nNotes on The Future is Degrowth\n\n\n\nbook review\n\nclimate change\n\neconomics\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nSteven\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nSteven\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/SSM.html",
+    "href": "posts/SSM.html",
+    "title": "Notes on State Space Models",
+    "section": "",
+    "text": "This page serves as a notebook for the topic of State Space Models.\n\nBasic idea\nA state space model is a used to describe the behavior of a system over time. It consists of two main components: the state equation, which describes how the internal state of the system evolves over time, and the observation equation, which relates the observed data to the underlying state.\n\nGeneral References\nState Space Models, Durbin & Koopman.\nBayesian Filtering and Smoothing, Simo Särkkä. A book that focuses on Bayesian methods for state space models, recommended.\n\n\nOther Topics\nVariational Gaussian Process State Space Models, R. Frigola, Y. Chen, C. E. Rasmussen. Using a GP for non-linear SSMs.\nLaplace approximated Gaussian process state-space models, Lindinger et al. Using a GP for non-linear SSMs but inference is done via Laplace approximation."
   }
 ]

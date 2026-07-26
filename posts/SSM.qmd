@@ -1,0 +1,27 @@
+---
+title: "Notes on State Space Models"
+format: html
+author: "Steven"
+date: "2026-07-19"
+categories: [Statistics, Science, Machine Learning]
+---
+
+This page serves as a notebook for the topic of State Space Models.
+
+#### Basic idea
+
+A state space model is a used to describe the behavior of a system over time. It consists of two main components: the state equation, which describes how the internal state of the system evolves over time, and the observation equation, which relates the observed data to the underlying state.
+
+###### General References
+
+[State Space Models](https://academic.oup.com/book/16563), Durbin & Koopman.    
+[Bayesian Filtering and Smoothing](https://users.aalto.fi/~ssarkka/#books), Simo Särkkä. A book that focuses on Bayesian methods for state space models, recommended.  
+[Hidden Markov Models](https://bactra.org/notebooks/hmms.html), Shalizi's notes on HMMs.  
+
+
+###### Other Topics
+
+[Variational Gaussian Process State Space Models](https://proceedings.neurips.cc/paper_files/paper/2014/file/875b60cf697a9e09e12c0f07b982e431-Paper.pdf), R. Frigola, Y. Chen, C. E. Rasmussen. Using a GP for non-linear SSMs.  
+[Laplace approximated Gaussian process state-space models](https://proceedings.mlr.press/v180/lindinger22a.html), Lindinger *et al*. Using a GP for non-linear SSMs but inference is done via the Laplace approximation.  
+[Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366), Chen *et al*. Using a neural network to model the dynamics of a system.  
+
