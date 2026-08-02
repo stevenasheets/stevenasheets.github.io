@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -163,18 +192,42 @@ ul.task-list li input[type="checkbox"] {
 <p>This page serves as a notebook for the topic of State Space Models.</p>
 <section id="basic-idea" class="level4">
 <h4 class="anchored" data-anchor-id="basic-idea">Basic idea</h4>
-<p>A state space model is a used to describe the behavior of a system over time. It consists of two main components: the state equation, which describes how the internal state of the system evolves over time, and the observation equation, which relates the observed data to the underlying state.</p>
+<p>I’m mostly interested in linear dynamical systems and their applications. I will briefly review the basic ideas.</p>
+<p>Let <span class="math inline">\(x_t\)</span> be the state of the system at time <span class="math inline">\(t\)</span>. A discrete-step state space model can be defined by the</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+x_{t+1} &amp;= f(x_t, u_t) + w_t \\
+y_t     &amp;= h(x_t) + v_t
+\end{aligned}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(u_t\)</span> are the control parameters, <span class="math inline">\(w_t\)</span> the process noise, <span class="math inline">\(y_t\)</span> the observations, <span class="math inline">\(v_t\)</span> is the observation noise, and <span class="math inline">\(f\)</span> and <span class="math inline">\(h\)</span> are the state and observation functions, respectively. In the linear case, <span class="math inline">\(f\)</span> and <span class="math inline">\(h\)</span> are linear functions and the model can be represented as:</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+x_{t+1} &amp;= A x_t + B u_t + w_t \\
+y_t     &amp;= C x_t + v_t
+\end{aligned}
+\end{equation}\]</span></p>
+<p>with <span class="math inline">\(w_t \sim \mathcal{N}(0, Q)\)</span> and <span class="math inline">\(v_t \sim \mathcal{N}(0, R)\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(R\)</span> are the process and observation noise covariance matrices respectively. However, in most cases the time-dependent case is more useful so we write this as a stochastic differential equation:</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\frac{dx}{d\tau} &amp;= A x(\tau) + B u(\tau) + w(\tau) \\
+y(\tau)     &amp;= C x(\tau) + v(\tau).
+\end{aligned}
+\end{equation}\]</span></p>
 <section id="general-references" class="level6">
 <h6 class="anchored" data-anchor-id="general-references">General References</h6>
 <p><a href="https://academic.oup.com/book/16563">State Space Models</a>, Durbin &amp; Koopman.<br>
 <a href="https://users.aalto.fi/~ssarkka/#books">Bayesian Filtering and Smoothing</a>, Simo Särkkä. A book that focuses on Bayesian methods for state space models, recommended.<br>
-<a href="https://bactra.org/notebooks/hmms.html">Hidden Markov Models</a>, Shalizi’s notes on HMMs.</p>
+<a href="https://bactra.org/notebooks/hmms.html">Hidden Markov Models</a>, Shalizi’s notes on HMMs.<br>
+<a href="https://suzyahyah.github.io/machine%20learning/2026/06/27/trouble-with-time-series.html">The Unreasonable Difficulty of Time Series Forecasting</a></p>
 </section>
 <section id="other-topics" class="level6">
 <h6 class="anchored" data-anchor-id="other-topics">Other Topics</h6>
 <p><a href="https://proceedings.neurips.cc/paper_files/paper/2014/file/875b60cf697a9e09e12c0f07b982e431-Paper.pdf">Variational Gaussian Process State Space Models</a>, R. Frigola, Y. Chen, C. E. Rasmussen. Using a GP for non-linear SSMs.<br>
 <a href="https://proceedings.mlr.press/v180/lindinger22a.html">Laplace approximated Gaussian process state-space models</a>, Lindinger <em>et al</em>. Using a GP for non-linear SSMs but inference is done via the Laplace approximation.<br>
-<a href="https://arxiv.org/abs/1806.07366">Neural Ordinary Differential Equations</a>, Chen <em>et al</em>. Using a neural network to model the dynamics of a system.</p>
+<a href="https://arxiv.org/abs/1806.07366">Neural Ordinary Differential Equations</a>, Chen <em>et al</em>. Using a neural network to model the dynamics of a system.<br>
+<a href="https://proceedings.mlr.press/v80/doerr18a/doerr18a.pdf">Probabilistic Recurrent State-Space Models</a>.<br>
+<a href="https://www.cs.utoronto.ca/~hinton/absps/switch.pdf">Variational learning for Switching State Space Models</a>, Ghahramani &amp; Hinton.</p>
 
 
 </section>

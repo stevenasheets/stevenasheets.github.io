@@ -10,18 +10,49 @@ This page serves as a notebook for the topic of State Space Models.
 
 #### Basic idea
 
-A state space model is a used to describe the behavior of a system over time. It consists of two main components: the state equation, which describes how the internal state of the system evolves over time, and the observation equation, which relates the observed data to the underlying state.
+I'm mostly interested in linear dynamical systems and their applications. I will briefly review the basic ideas. 
+
+Let $x_t$ be the state of the system at time $t$. A discrete-step state space model can be defined by the
+
+\begin{equation}
+\begin{aligned}
+x_{t+1} &= f(x_t, u_t) + w_t \\
+y_t     &= h(x_t) + v_t
+\end{aligned}
+\end{equation}
+
+where $u_t$ are the control parameters, $w_t$ the process noise, $y_t$ the observations, $v_t$ is the observation noise, and $f$ and $h$ are the state and observation functions, respectively. In the linear case, $f$ and $h$ are linear functions and the model can be represented as:
+
+\begin{equation}
+\begin{aligned}
+x_{t+1} &= A x_t + B u_t + w_t \\
+y_t     &= C x_t + v_t
+\end{aligned}
+\end{equation}
+
+with $w_t \sim \mathcal{N}(0, Q)$ and $v_t \sim \mathcal{N}(0, R)$ where $Q$ and $R$ are the process and observation noise covariance matrices respectively. However, in most cases the time-dependent case is more useful so we write this as a stochastic differential equation:
+
+\begin{equation}
+\begin{aligned}
+\frac{dx}{d\tau} &= A x(\tau) + B u(\tau) + w(\tau) \\
+y(\tau)     &= C x(\tau) + v(\tau).
+\end{aligned}
+\end{equation}
+
+
 
 ###### General References
 
 [State Space Models](https://academic.oup.com/book/16563), Durbin & Koopman.    
 [Bayesian Filtering and Smoothing](https://users.aalto.fi/~ssarkka/#books), Simo Särkkä. A book that focuses on Bayesian methods for state space models, recommended.  
-[Hidden Markov Models](https://bactra.org/notebooks/hmms.html), Shalizi's notes on HMMs.  
-
+[Hidden Markov Models](https://bactra.org/notebooks/hmms.html), Shalizi's notes on HMMs.    
+[The Unreasonable Difficulty of Time Series Forecasting](https://suzyahyah.github.io/machine%20learning/2026/06/27/trouble-with-time-series.html)
 
 ###### Other Topics
 
 [Variational Gaussian Process State Space Models](https://proceedings.neurips.cc/paper_files/paper/2014/file/875b60cf697a9e09e12c0f07b982e431-Paper.pdf), R. Frigola, Y. Chen, C. E. Rasmussen. Using a GP for non-linear SSMs.  
 [Laplace approximated Gaussian process state-space models](https://proceedings.mlr.press/v180/lindinger22a.html), Lindinger *et al*. Using a GP for non-linear SSMs but inference is done via the Laplace approximation.  
 [Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366), Chen *et al*. Using a neural network to model the dynamics of a system.  
+[Probabilistic Recurrent State-Space Models](https://proceedings.mlr.press/v80/doerr18a/doerr18a.pdf).  
+[Variational learning for Switching State Space Models](https://www.cs.utoronto.ca/~hinton/absps/switch.pdf), Ghahramani & Hinton.   
 
